@@ -7,8 +7,9 @@
         <p-button
           [icon]="item.icon"
           [rounded]="true"
-          severity="secondary"
+          [severity]="isActive(item.routerLink) ? 'contrast' : 'secondary'"
           variant="text"
+          [class.active-collapsed-btn]="isActive(item.routerLink)"
           [routerLink]="item.routerLink"
           [pTooltip]="item.label"
           tooltipPosition="right"

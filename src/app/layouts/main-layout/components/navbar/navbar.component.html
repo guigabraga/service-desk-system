@@ -1,12 +1,14 @@
 <p-toolbar>
   <ng-template #start>
-    <p-button
-      icon="pi pi-bars"
-      [rounded]="true"
-      severity="secondary"
-      variant="text"
-      (click)="toggleSidebar()"
-    />
+    @if (showToggle()) {
+      <p-button
+        icon="pi pi-bars"
+        [rounded]="true"
+        severity="secondary"
+        variant="text"
+        (click)="toggleSidebar()"
+      />
+    }
     <img 
       [src]="themeService.isDark() ? 'images/logo-small-dark.png' : 'images/logo-small-light.png'" 
       alt="Logo" 

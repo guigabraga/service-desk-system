@@ -1,4 +1,7 @@
-<app-navbar (onToggleSidebar)="toggleSidebar()" />
+<app-navbar
+  [showToggle]="!isMobile()"
+  (onToggleSidebar)="toggleSidebar()"
+/>
 <div class="layout">
   <app-sidebar [collapsed]="sidebarCollapsed()" />
   <main class="content">

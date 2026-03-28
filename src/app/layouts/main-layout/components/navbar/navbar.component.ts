@@ -1,4 +1,4 @@
-import { Component, inject, output } from '@angular/core';
+import { Component, inject, output, input } from '@angular/core';
 import { Button } from 'primeng/button';
 import { Toolbar } from 'primeng/toolbar';
 import { Tooltip } from 'primeng/tooltip';
@@ -19,6 +19,7 @@ export class NavbarComponent {
   themeService = inject(ThemeService)
   authService = inject(AuthService)
   onToggleSidebar = output<void>()
+  showToggle = input<boolean>(true);
 
   toggleSidebar(): void {
     this.onToggleSidebar.emit()

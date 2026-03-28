@@ -16,10 +16,12 @@ import { RouterOutlet } from '@angular/router';
 })
 export class MainLayoutComponent {
   themeService = inject(ThemeService)
-  sidebarCollapsed = signal<boolean>(false);
+  sidebarCollapsed = signal<boolean>(true);
+  isMobile = signal<boolean>(false);
 
   ngOnInit(): void {
     this.themeService.applyTheme()
+    this.checkScreenSize();
   }
 
   @HostListener('window:resize')
@@ -28,14 +30,14 @@ export class MainLayoutComponent {
   }
 
   private checkScreenSize(): void {
-    if (window.innerWidth < 600) {
+    const mobile = window.innerWidth < 600;
+    this.isMobile.set(mobile);
+    if (mobile) {
       this.sidebarCollapsed.set(true);
-    } else {
-      this.sidebarCollapsed.set(false);
     }
   }
 
   toggleSidebar(): void {
-    this.sidebarCollapsed.update(v => !v);
+    this.sidebarCollapsed.update(value => !value);
   }
 }
