@@ -3,6 +3,8 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { LoginComponent } from './screens/public/login/login.component';
 import { ErrorComponent } from './screens/public/error/error.component';
+import { HomeComponent } from './screens/private/home/home.component';
+import { authGuard } from './core/guards/auth-guard';
 
 export const routes: Routes = [
   {
@@ -21,6 +23,17 @@ export const routes: Routes = [
       {
         path: 'error',
         component: ErrorComponent
+      }
+    ]
+  },
+  {
+    path: '',
+    canActivate: [authGuard],
+    component: MainLayoutComponent,
+    children: [
+      {
+        path: 'home',
+        component: HomeComponent
       }
     ]
   },

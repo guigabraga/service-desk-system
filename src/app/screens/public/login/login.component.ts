@@ -8,6 +8,7 @@ import { Button } from 'primeng/button';
 import { Message } from 'primeng/message';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../../core/services/theme.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -27,11 +28,11 @@ import { ThemeService } from '../../../core/services/theme.service';
 export class LoginComponent {
 
   themeService = inject(ThemeService)
-
-  private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private form = inject(FormBuilder);
   private router = inject(Router);
 
-  loginForm: FormGroup = this.fb.group({
+  loginForm: FormGroup = this.form.group({
     usuario: ['', Validators.required],
     senha: ['', Validators.required]
   });
@@ -39,8 +40,8 @@ export class LoginComponent {
   erro = false;
   loading = false;
 
-  isInvalid(campo: string): boolean {
-    const control = this.loginForm.get(campo);
+  isInvalid(field: string): boolean {
+    const control = this.loginForm.get(field);
     return !!(control?.invalid && control?.touched);
   }
 
@@ -57,9 +58,9 @@ export class LoginComponent {
 
     setTimeout(() => {
       this.loading = false;
-
+      this.authService.login()
       if (usuario === 'admin' && senha === 'admin') {
-        this.router.navigate(['/chamados']);
+        this.router.navigate(['/home']);
       } else {
         this.erro = true;
       }
