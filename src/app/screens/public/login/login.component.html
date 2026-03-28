@@ -1,1 +1,56 @@
-<p>login works!</p>
+<p-card class="login-card">
+  <div class="login-header">
+    <img 
+      [src]="themeService.isDark() ? 'images/logo-comp-dark.png' : 'images/logo-comp-light.png'" 
+      alt="Logo" 
+      class="logo" 
+    />
+    <p>Faça login para continuar</p>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label for="usuario">Usuário</label>
+      <input
+        pInputText
+        id="usuario"
+        formControlName="usuario"
+        placeholder="Digite seu usuário"
+        [class.ng-invalid]="isInvalid('usuario')"
+        class="w-full"
+        pSize="small"
+      />
+      @if (isInvalid('usuario')) {
+        <small class="p-error">Usuário obrigatório</small>
+      }
+    </div>
+    <div class="field">
+      <label for="senha">Senha</label>
+      <p-password
+        id="senha"
+        formControlName="senha"
+        placeholder="Digite sua senha"
+        [feedback]="false"
+        [toggleMask]="true"
+        [invalid]="isInvalid('senha')"
+        fluid
+        size="small"
+      />
+      @if (isInvalid('senha')) {
+        <small class="p-error">Senha obrigatória</small>
+      }
+    </div>
+    @if (erro) {
+      <p-message severity="error" class="w-full error-message">
+        Usuário ou senha inválidos
+      </p-message>
+    }
+    <p-button
+      type="submit"
+      label="Entrar"
+      icon="pi pi-sign-in"
+      [loading]="loading"
+      [severity]="themeService.isDark() ? 'secondary' : 'help'"
+      fluid
+    />
+  </form>
+</p-card>

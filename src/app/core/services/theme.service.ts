@@ -20,7 +20,6 @@ export class ThemeService {
   }
 
   applyTheme(): void {
-    document.querySelector('html')
-      ?.classList.toggle('app-dark', this.isDark())
+    document.querySelector('html') ?.classList.toggle('app-dark', this.isDark())
   }
 }
