@@ -1,0 +1,19 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+:host ::ng-deep .p-toolbar {
+  height: 60px;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.logo {
+  width: 60px;
+}

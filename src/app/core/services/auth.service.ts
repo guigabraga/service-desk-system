@@ -1,9 +1,11 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private router = inject(Router)
   isAuthenticated = signal<boolean>(this.loadAuth())
 
   private loadAuth(): boolean {
@@ -18,5 +20,6 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('auth')
     this.isAuthenticated.set(false)
+    this.router.navigate(['/login'])
   }
 }

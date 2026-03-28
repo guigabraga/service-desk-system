@@ -1,0 +1,24 @@
+aside {
+  width: 250px;
+  height: 100%;
+  background-color: var(--p-surface-card);
+  border-right: 1px solid var(--p-surface-border);
+  transition: width 0.3s ease;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+}
+
+aside.collapsed {
+  width: 60px;
+}
+
+.collapsed-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+  gap: 0.5rem;
+}

@@ -13,13 +13,13 @@ import { ThemeService } from '../../../../core/services/theme.service';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  themeService = inject(ThemeService);
+  themeService = inject(ThemeService)
 
   ngOnInit(): void {
-    this.themeService.applyTheme();
+    this.themeService.applyTheme()
   }
 
   toggleTheme(): void {
-    this.themeService.toggleTheme();
+    this.themeService.toggleTheme()
   }
 }

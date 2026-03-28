@@ -1,0 +1,19 @@
+<aside [class.collapsed]="collapsed()">
+  @if (!collapsed()) {
+    <p-panelMenu [model]="menuItems" />
+  } @else {
+    <div class="collapsed-menu">
+      @for (item of menuItems; track item.label) {
+        <p-button
+          [icon]="item.icon"
+          [rounded]="true"
+          severity="secondary"
+          variant="text"
+          [routerLink]="item.routerLink"
+          [pTooltip]="item.label"
+          tooltipPosition="right"
+        />
+      }
+    </div>
+  }
+</aside>
