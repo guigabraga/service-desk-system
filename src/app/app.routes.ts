@@ -20,7 +20,8 @@ export const routes: Routes = [
     children: [
       {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+        canActivate: [authGuard]
       },
       {
         path: 'error',
@@ -44,6 +45,10 @@ export const routes: Routes = [
       {
         path: 'new-service',
         component: NewServiceComponent
+      },
+      {
+        path: '**',
+        redirectTo: 'home'
       }
     ]
   },
