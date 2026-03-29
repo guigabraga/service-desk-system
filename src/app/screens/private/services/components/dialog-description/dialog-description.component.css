@@ -1,0 +1,8 @@
+.title {
+  color: var(--p-text-muted-color);
+  padding-bottom: 5px;
+}
+
+.field {
+  padding-bottom: 20px;
+}

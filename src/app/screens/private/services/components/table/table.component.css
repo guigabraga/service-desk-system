@@ -1,0 +1,17 @@
+:host ::ng-deep .p-datatable th,
+:host ::ng-deep .p-datatable td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+:host ::ng-deep .p-datatable td {
+  color: var(--p-text-muted-color);
+}
+
+:host ::ng-deep .p-datatable .p-datatable-wrapper {
+  overflow: visible !important;
+}
+
+:host ::ng-deep .p-datatable {
+  overflow: visible !important;
+}

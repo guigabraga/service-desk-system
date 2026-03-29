@@ -1,3 +1,10 @@
 <div class="card">
-  <app-table></app-table>
+  <app-table
+    (serviceDetails)="openDialog($event)"
+  />
+  <app-dialog-description
+    [service]="selectedService()"
+    [visible]="dialogOpen()"
+    (visibleChange)="dialogOpen.set($event)"
+  />
 </div>

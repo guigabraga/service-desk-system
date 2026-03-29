@@ -1,3 +1,4 @@
+<p-toast />
 <p-table 
   #dt2 
   [value]="servicesList()" 
@@ -6,6 +7,7 @@
   [rowsPerPageOptions]="[10, 25, 50]"
   [paginator]="true"
   [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+  scrollHeight="flex"
 >
   <ng-template #caption>
     <div class="flex">
@@ -20,14 +22,44 @@
   <ng-template #header>
     <th style="width:12%">ID</th>
     <th style="width:22%">Criado em:</th>
-    <th style="width:22%">Titulo</th>
+    <th style="width:22%">Título</th>
     <th style="width:22%">Categoria</th>
-    <th style="width:22%">Status</th>
+    <th style="width:15%">Status</th>
+    <th style="width:5%">Detalhes</th>
   </ng-template>
   <ng-template #body let-service>
     <tr>
-        <td>
-          {{ service.id }}
+      <td>
+        {{ service.id }}
+      </td>
+      <td>
+        {{ formatDate(service.createDate) }}
+      </td>
+      <td>
+        {{ service.title }}
+      </td>
+      <td>
+        {{ service.category }}
+      </td>
+      <td>
+         <p-select
+          [options]="statusOptions"
+          [ngModel]="service.status"
+          (ngModelChange)="updateStatus({ id: service.id, status: $event })"
+          optionLabel="label"
+          optionValue="value"
+          size="small"
+          appendTo="body"
+        />
+      </td>
+      <td>
+        <p-button
+          icon="pi pi-eye"
+          [rounded]="true"
+          severity="secondary"
+          variant="text"
+          (click)="serviceDetails.emit(service)"
+        />
       </td>
     </tr>
   </ng-template>

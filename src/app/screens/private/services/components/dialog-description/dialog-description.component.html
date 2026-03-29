@@ -1,0 +1,34 @@
+<p-dialog
+  [visible]="visible()"
+  (visibleChange)="visibleChange.emit($event)"
+  [modal]="true"
+  [draggable]="false"
+  [resizable]="false"
+  header="Detalhes do chamado"
+  [style]="{ width: '500px' }"
+>
+  @if (service()) {
+    <div class="dialog-content">
+      <div class="dialog-field field">
+        <p class="title">ID</p>
+        <p-message severity="secondary">{{ service()!.id }}</p-message>
+      </div>
+      <div class="dialog-field field">
+        <p class="title">Título</p>
+        <p-message severity="secondary">{{ service()!.title }}</p-message>
+      </div>
+      <div class="dialog-field field">
+        <p class="title">Descrição</p>
+        <p-message severity="secondary">{{ service()!.description }}</p-message>
+      </div>
+    </div>
+  }
+
+  <ng-template #footer>
+    <p-button
+      label="Fechar"
+      severity="secondary"
+      (click)="visibleChange.emit(false)"
+    />
+  </ng-template>
+</p-dialog>

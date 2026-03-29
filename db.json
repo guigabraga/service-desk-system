@@ -4,7 +4,7 @@
       "title": "Internet lenta",
       "description": "Internet lenta em todo setor de compras",
       "category": "Acesso",
-      "status": "Aberto",
+      "status": "Finalizado",
       "createDate": "2026-03-29 11:27:42",
       "id": "GKJP5qWzItk"
     },
@@ -20,7 +20,7 @@
       "title": "Criar novo acesso",
       "description": "Criar acesso para o usuário joao@souza",
       "category": "Acesso",
-      "status": "Aberto",
+      "status": "Cancelado",
       "createDate": "2026-03-29 11:40:28",
       "id": "Rr8siu_Gb3M"
     },
@@ -28,9 +28,25 @@
       "title": "Novo acesso",
       "description": "Criar novo acesso para o usuário pedro@lima",
       "category": "Acesso",
-      "status": "Aberto",
+      "status": "Em atendimento",
       "createDate": "2026-03-29 11:42:43",
       "id": "tRTnraf7wXI"
+    },
+    {
+      "title": "Falha na conexão",
+      "description": "Não estou conseguindo conextar à internet",
+      "category": "Conexão",
+      "status": "Aberto",
+      "createDate": "2026-03-29 14:00:48",
+      "id": "IdGZmc-zcQI"
+    },
+    {
+      "title": "Novo mouse",
+      "description": "Preciso de um novo mouse para a máquina id 78899",
+      "category": "Infra",
+      "status": "Finalizado",
+      "createDate": "2026-03-29 14:01:30",
+      "id": "bLUi0HKm9yg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

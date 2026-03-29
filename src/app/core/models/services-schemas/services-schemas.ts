@@ -1,5 +1,5 @@
 export interface IServicesObject {
-  id: number;
+  id: string;
   title: string;
   description: string;
   category: "Infra" | "Acesso" | "Software" | "Conexão";
