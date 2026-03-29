@@ -17,7 +17,7 @@ Sistema web de abertura e gerenciamento de chamados de suporte técnico, desenvo
 Clone o repositório:
 
 ```bash
-git clone https://github.com/guigabraga/service-desk-system.git
+git clone https://github.com/seu-usuario/service-desk-system.git
 cd service-desk-system
 npm install
 ```
@@ -26,17 +26,35 @@ npm install
 
 ## Rodando o projeto
 
-### Opção 1 — Com Angular CLI instalado globalmente
+### Opção 1 — Tudo junto com um único comando (recomendado)
+
+Roda o servidor Angular e a API fake simultaneamente usando o `concurrently`:
 
 ```bash
-npm install -g @angular/cli
-ng serve
+npm run dev
 ```
 
-### Opção 2 — Sem Angular CLI global (usando apenas o do projeto)
+A aplicação estará disponível em `http://localhost:4200` e a API em `http://localhost:3000`.
+
+### Opção 2 — Separado, com Angular CLI instalado globalmente
 
 ```bash
+# terminal 1
+npm install -g @angular/cli
+ng serve
+
+# terminal 2
+npm run mock-api
+```
+
+### Opção 3 — Separado, sem Angular CLI global
+
+```bash
+# terminal 1
 npx ng serve
+
+# terminal 2
+npm run mock-api
 ```
 
 A aplicação estará disponível em `http://localhost:4200`.
@@ -163,10 +181,18 @@ Sem o Day.js, o tratamento de datas exigiria código verbose com o objeto nativo
 Aproximadamente **25% do código** deste projeto foi gerado com auxílio de ferramentas de inteligência artificial — especificamente **Claude (Anthropic)** e **ChatGPT (OpenAI)**. A contribuição da IA foi focada principalmente em:
 
 - Estilizações CSS e ajustes de layout responsivo
-- Estrutura inicial de componentes repetitivos
 - Configuração de propriedades específicas do PrimeNG
 - Sugestões de boas práticas de organização de código Angular
 
 Todo o código gerado foi revisado, adaptado e integrado manualmente ao projeto, garantindo consistência com a arquitetura definida e os requisitos do sistema.
 
 ---
+
+## Scripts disponíveis
+
+```bash
+npm run dev       # Inicia o Angular e o json-server simultaneamente (recomendado)
+npm run mock-api  # Inicia apenas o json-server na porta 3000
+```
+
+> O script `dev` utiliza o pacote **concurrently** para rodar os dois processos em paralelo no mesmo terminal, exibindo os logs de cada um com cores diferentes para facilitar a leitura.
