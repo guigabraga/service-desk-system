@@ -1,1 +1,29 @@
-<p>home works!</p>
+<div class="home-container">
+  <div class="charts-grid">
+    <p-card header="Chamados por categoria" class="chart-card">
+      <div class="chart-wrapper">
+        @if (pieChartData1) {
+          <p-chart
+            type="pie"
+            [data]="pieChartData1"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+          />
+        }
+      </div>
+    </p-card>
+
+    <p-card header="Chamados por status" class="chart-card">
+      <div class="chart-wrapper">
+        @if (pieChartData2) {
+          <p-chart
+            type="pie"
+            [data]="pieChartData2"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+          />
+        }
+      </div>
+    </p-card>
+  </div>
+</div>

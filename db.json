@@ -12,7 +12,7 @@
       "title": "Pacote office",
       "description": "Intalação de pacote office na máquina id: 777",
       "category": "Software",
-      "status": "Aberto",
+      "status": "Em atendimento",
       "createDate": "2026-03-29 11:29:51",
       "id": "MggJkCX-igM"
     },
@@ -36,7 +36,7 @@
       "title": "Falha na conexão",
       "description": "Não estou conseguindo conextar à internet",
       "category": "Conexão",
-      "status": "Aberto",
+      "status": "Em atendimento",
       "createDate": "2026-03-29 14:00:48",
       "id": "IdGZmc-zcQI"
     },
@@ -47,6 +47,62 @@
       "status": "Finalizado",
       "createDate": "2026-03-29 14:01:30",
       "id": "bLUi0HKm9yg"
+    },
+    {
+      "title": "Mouse falhando",
+      "description": "O mouse está falhando",
+      "category": "Infra",
+      "status": "Aberto",
+      "createDate": "2026-03-29 14:35:29",
+      "id": "id0p6rYwTF4"
+    },
+    {
+      "title": "Liberar site",
+      "description": "Preciso acessar a Wikipedia para pesquisa do trabalho mas está bloqueada. Por gentileza liberar acesso.",
+      "category": "Acesso",
+      "status": "Em atendimento",
+      "createDate": "2026-03-29 14:38:01",
+      "id": "iURHOsIsAJs"
+    },
+    {
+      "title": "VS Code",
+      "description": "Instalação do vs code na máquina id 77899",
+      "category": "Software",
+      "status": "Em atendimento",
+      "createDate": "2026-03-29 14:42:33",
+      "id": "9UuJEF6T9mc"
+    },
+    {
+      "title": "Novo acesso",
+      "description": "Criação de acesso para o usuário matheus@galdino",
+      "category": "Acesso",
+      "status": "Aberto",
+      "createDate": "2026-03-29 14:44:45",
+      "id": "tUrQrV4JftI"
+    },
+    {
+      "title": "Internet falhando",
+      "description": "Internet lenta em todo setor de serviços",
+      "category": "Conexão",
+      "status": "Aberto",
+      "createDate": "2026-03-29 14:47:29",
+      "id": "IL7Mg8BtTN0"
+    },
+    {
+      "title": "Instalar Docker",
+      "description": "Preciso instalar o Docker para desenvolvimento de aplicativos",
+      "category": "Software",
+      "status": "Aberto",
+      "createDate": "2026-03-29 14:50:12",
+      "id": "FkFZCE2VH5k"
+    },
+    {
+      "title": "Novo monitor",
+      "description": "Novo monitor para posição de atendimento 998998",
+      "category": "Infra",
+      "status": "Aberto",
+      "createDate": "2026-03-29 16:56:16",
+      "id": "12IynQgRjfw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
