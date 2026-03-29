@@ -88,12 +88,12 @@ export class NewServiceComponent {
       }
 
       this.servicesService.create(newData).subscribe({
-        next: () => {
+        next: (response) => {
           this.newService.reset();
           this.messageService.add({
             severity: 'success',
             summary: 'Sucesso',
-            detail: 'Novo chamado criado com sucesso'
+            detail: `Novo chamado ID: ${response.id} criado com sucesso`
           })
           this.loading = false
         },
