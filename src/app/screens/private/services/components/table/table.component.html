@@ -1,0 +1,34 @@
+<p-table 
+  #dt2 
+  [value]="servicesList()" 
+  dataKey="id" 
+  [rows]="10" 
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [paginator]="true"
+  [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+>
+  <ng-template #caption>
+    <div class="flex">
+        <!-- <p-iconfield iconPosition="left" class="ml-auto">
+            <p-inputicon>
+                <i class="pi pi-search"></i>
+            </p-inputicon>
+            <input pInputText type="text" (input)="dt2.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+        </p-iconfield> -->
+    </div>
+  </ng-template>
+  <ng-template #header>
+    <th style="width:12%">ID</th>
+    <th style="width:22%">Criado em:</th>
+    <th style="width:22%">Titulo</th>
+    <th style="width:22%">Categoria</th>
+    <th style="width:22%">Status</th>
+  </ng-template>
+  <ng-template #body let-service>
+    <tr>
+        <td>
+          {{ service.id }}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

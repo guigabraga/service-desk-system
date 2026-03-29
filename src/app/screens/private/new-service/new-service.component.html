@@ -1,1 +1,74 @@
-<p>new-service works!</p>
+<div class="content">
+  <p-card class="form-card">
+    <div class="header-form">
+      <p>Novo chamado</p>
+      <small class="subtitle">Prencha os cambos abaixo para abertura de um novo chamado</small>
+    </div>
+    <form
+      [formGroup]="newService"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="field">
+        <label for="title">Título</label>
+        <input
+          pInputText
+          id="title"
+          formControlName="title"
+          [class.ng-invalid]="isInvalid('title')"
+          [class.ng-dirty]="isInvalid('title')"
+          placeholder="Informe um título"
+          class="w-full"
+          pSize="small"
+        />
+        @if (isInvalid('title')) {
+          <small class="message-error">Título é obrigatório (máx. 50 caracteres)</small>
+        }
+      </div>
+      <div class="field">
+        <label for="description">Descrição</label>
+        <textarea
+          class="textarea-form"
+          pTextarea 
+          pSize="small" 
+          placeholder="Um breve relato sobre o problema" 
+          rows="5"
+          formControlName="description"
+          [class.ng-invalid]="isInvalid('description')"
+          [class.ng-dirty]="isInvalid('description')"
+        ></textarea>
+        @if (isInvalid('description')) {
+          <small class="message-error">Descrição é obrigatória (máx. 250 caracteres)</small>
+        }
+      </div>
+      <div class="field">
+        <label for="category">Categoria</label>
+        <p-select 
+          [options]="categories" 
+          optionLabel="name" 
+          size="small" 
+          placeholder="Selecione uma categoria" 
+          class="w-full"
+          formControlName="category"
+          [class.ng-invalid]="isInvalid('category')"
+          [class.ng-dirty]="isInvalid('category')"
+        />
+        @if (isInvalid('category')) {
+          <small class="message-error">Selecione uma categoria</small>
+        }
+      </div>
+      <div
+        class="footer"
+      >
+        <p-button
+          type="submit"
+          label="Cadastrar"
+          icon="pi pi-plus"
+          [loading]="loading"
+          [severity]="themeService.isDark() ? 'secondary' : 'help'"
+          fluid
+        />
+      </div>
+    </form>
+  </p-card>
+  <p-toast></p-toast>
+</div>

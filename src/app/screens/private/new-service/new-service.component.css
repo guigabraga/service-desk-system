@@ -1,0 +1,43 @@
+.content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.form-card {
+  width: 100%;
+  min-width: 300px;
+  max-width: 500px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.header-form {
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+
+.subtitle {
+  color: var(--p-text-muted-color);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.textarea-form {
+  resize: none;
+}
+
+.message-error {
+  color: var(--p-text-muted-color);
+}
+
+.footer {
+  padding-top: 20px;
+}
