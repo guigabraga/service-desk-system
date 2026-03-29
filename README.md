@@ -163,7 +163,6 @@ Sem o Day.js, o tratamento de datas exigiria código verbose com o objeto nativo
 Aproximadamente **25% do código** deste projeto foi gerado com auxílio de ferramentas de inteligência artificial — especificamente **Claude (Anthropic)** e **ChatGPT (OpenAI)**. A contribuição da IA foi focada principalmente em:
 
 - Estilizações CSS e ajustes de layout responsivo
-- Estrutura inicial de componentes repetitivos
 - Configuração de propriedades específicas do PrimeNG
 - Sugestões de boas práticas de organização de código Angular
 
