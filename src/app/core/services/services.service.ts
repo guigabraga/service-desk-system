@@ -13,7 +13,7 @@ type TCreateService = Omit<IServicesObject, 'id'>;
 
 export class ServicesService {
   private http = inject(HttpClient)
-  private apiUrl = 'http://localhost/services'
+  private apiUrl = 'http://localhost:3000/services'
 
   getAll(): Observable<IServicesObject[]> {
     return this.http.get<IServicesObject[]>(this.apiUrl).pipe(
@@ -33,6 +33,6 @@ export class ServicesService {
   }
 
   updateStatus(id: string, status: IServicesObject['status']): Observable<IServicesObject> {
-    return this.http.patch<IServicesObject>(`${this.apiUrl}/${id}`, { status });
+    return this.http.patch<IServicesObject>(`${this.apiUrl}/${id}`, { status })
   }
 }
