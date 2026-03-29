@@ -17,7 +17,7 @@ Sistema web de abertura e gerenciamento de chamados de suporte técnico, desenvo
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/service-desk-system.git
+git clone https://github.com/guigabraga/service-desk-system.git
 cd service-desk-system
 npm install
 ```
