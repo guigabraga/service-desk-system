@@ -51,3 +51,7 @@
   display: block;
   margin-bottom: 1rem;
 }
+
+.message-error {
+  color: var(--p-text-muted-color);
+}

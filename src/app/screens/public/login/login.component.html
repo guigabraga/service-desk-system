@@ -20,7 +20,7 @@
         pSize="small"
       />
       @if (isInvalid('usuario')) {
-        <small class="p-error">Usuário obrigatório</small>
+        <small class="message-error">Usuário obrigatório</small>
       }
     </div>
     <div class="field">
@@ -36,10 +36,10 @@
         size="small"
       />
       @if (isInvalid('senha')) {
-        <small class="p-error">Senha obrigatória</small>
+        <small class="message-error">Senha obrigatória</small>
       }
     </div>
-    @if (erro) {
+    @if (erro()) {
       <p-message severity="error" class="w-full error-message">
         Usuário ou senha inválidos
       </p-message>
@@ -48,7 +48,7 @@
       type="submit"
       label="Entrar"
       icon="pi pi-sign-in"
-      [loading]="loading"
+      [loading]="loading()"
       [severity]="themeService.isDark() ? 'secondary' : 'help'"
       fluid
     />
